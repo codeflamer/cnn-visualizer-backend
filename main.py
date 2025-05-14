@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import util as util
+import time
 
 util.load_artifacts()
 
@@ -21,7 +22,9 @@ async def root():
 
 @app.get("/all_layers")
 async def get_all_layer():
+    time1 = time.time()
     all_layers = util.get_all_layers()  # Convert integer to string
+    print(time.time()-time1)
     return {"response": all_layers}
 
 @app.get("/layer/{idx}")

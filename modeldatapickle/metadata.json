@@ -1,0 +1,64 @@
+{
+  "model_info": {
+    "total_layers": 10,
+    "input_shape": [
+      3,
+      224,
+      224
+    ]
+  },
+  "layers": [
+    {
+      "name": "conv1",
+      "file": "modeldatapickle/conv1.pkl"
+    },
+    {
+      "name": "conv2",
+      "file": "modeldatapickle/conv2.pkl"
+    },
+    {
+      "name": "conv3",
+      "file": "modeldatapickle/conv3.pkl"
+    },
+    {
+      "name": "conv4",
+      "file": "modeldatapickle/conv4.pkl"
+    },
+    {
+      "name": "conv5",
+      "file": "modeldatapickle/conv5.pkl"
+    },
+    {
+      "name": "conv6",
+      "file": "modeldatapickle/conv6.pkl"
+    },
+    {
+      "name": "conv7",
+      "file": "modeldatapickle/conv7.pkl"
+    },
+    {
+      "name": "conv8",
+      "file": "modeldatapickle/conv8.pkl"
+    },
+    {
+      "name": "conv9",
+      "file": "modeldatapickle/conv9.pkl"
+    },
+    {
+      "name": "conv10",
+      "file": "modeldatapickle/conv10.pkl"
+    },
+    {
+      "name": "conv11",
+      "file": "modeldatapickle/conv11.pkl"
+    },
+    {
+      "name": "conv12",
+      "file": "modeldatapickle/conv12.pkl"
+    },
+    {
+      "name": "conv13",
+      "file": "modeldatapickle/conv13.pkl"
+    }
+  ]
+}

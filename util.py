@@ -6,6 +6,7 @@ import torch.nn as nn
 from PIL import Image
 from io import BytesIO
 import base64
+import pickle
 
 __metadata = None
 
@@ -26,7 +27,6 @@ def tensor_to_color_base64(output_tensor,top_i):
     img.save(buffered, format="PNG")
     return base64.b64encode(buffered.getvalue()).decode('utf-8')
     
-
 def deconvolution(activation,conv_layer):
     deconv = nn.ConvTranspose2d(
         in_channels=conv_layer["out_channels"],
@@ -44,8 +44,8 @@ def get_layer_tensor(index:str):
     layer_file_path = __metadata["layers"][index]["file"]
     module_tensor = None
     try:
-        with open(f"./{layer_file_path}",'r') as f:
-            module_tensor = json.load(f)
+        with open(f"./{layer_file_path}",'rb') as f:
+            module_tensor = pickle.load(f)
     except FileNotFoundError as e:
         print(f"Error: Could not find one of the required files: {e}")
     ## Output from the convolution
@@ -80,7 +80,7 @@ def get_all_layers():
 def load_artifacts():
     global __metadata
     try:
-        with open("./modeldata/metadata.json", "r") as f:
+        with open("./modeldatapickle/metadata.json", "r") as f:
             __metadata = json.load(f)
         # with open("./artifacts/category_indexs.pickle", "rb") as f:
         #     __category_to_index = json.load(f)
