@@ -6,6 +6,8 @@
 # .venv/
 venv/
 modeldata/
+private/
+Rediscache/
 
 
 # Python

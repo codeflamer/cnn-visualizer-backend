@@ -22,9 +22,7 @@ async def root():
 
 @app.get("/all_layers")
 async def get_all_layer():
-    time1 = time.time()
-    all_layers = util.get_all_layers()  # Convert integer to string
-    print(time.time()-time1)
+    all_layers = util.get_all_layers() 
     return {"response": all_layers}
 
 @app.get("/layer/{idx}")
